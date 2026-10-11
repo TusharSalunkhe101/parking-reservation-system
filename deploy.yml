@@ -1,0 +1,15 @@
+---
+- name: Deploy Parking Reservation System
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Run parking reservation container
+      community.docker.docker_container:
+        name: parking-reservation-ansible
+        image: tusharsalunkhe/parking-reservation-service:1.0
+        state: started
+        restart_policy: unless-stopped
+        published_ports:
+          - "5003:5000"
