@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -10,13 +11,13 @@ pipeline {
 
         stage('Build and Install') {
             steps {
-                bat 'python -m pip install -r requirements.txt'
+                bat '"C:\\Users\\atul\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install -r requirements.txt'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'python -m pytest -v'
+                bat '"C:\\Users\\atul\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest -v'
             }
         }
     }
